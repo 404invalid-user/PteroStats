@@ -1,5 +1,5 @@
 //uncomment if your are not using the petro egg and wish to use the .env file
-require('dotenv').config();
+//require('dotenv').config();
 
 
 const ENVCheck = require('./utils/ENVCheck');

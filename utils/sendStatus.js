@@ -53,7 +53,7 @@ function makeEmbed(panel, nodes) {
 module.exports = async function(panel, nodes) {
     const embed = makeEmbed(panel, nodes);
 
-    if (process.env.WEBHOOK_MESSAGE_ID && !process.env.WEBHOOK_MESSAGE_ID.startsWith("<")) {
+    if (process.env.WEBHOOK_MESSAGE_ID && !process.env.WEBHOOK_MESSAGE_ID.startsWith("<") && process.env.WEBHOOK_MESSAGE_ID !== '00000000000000000000') {
         try {
             await axios.patch(process.env.WEBHOOK_URL + '/messages/' + process.env.WEBHOOK_MESSAGE_ID, { embeds: [embed] }, {
                 headers: { 'User-Agent': 'PteroStatus/1.0.0 by 404invalid-user' }
